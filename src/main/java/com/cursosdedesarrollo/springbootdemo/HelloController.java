@@ -21,7 +21,11 @@ public class HelloController {
     public ModelAndView sayHello(Model model){
         model.addAttribute("variable","valor");
         model.addAttribute("variable2","valor2");
-        return new ModelAndView("modelandview","model",model);
+        return
+                new ModelAndView(
+                        "modelandview",
+                        "model",
+                        model);
     }
 
     @GetMapping("/listado")
@@ -38,6 +42,16 @@ public class HelloController {
     public String dameParam(@PathVariable String id, Model model){
         model.addAttribute("id",id);
         return "parametro";
+    }
+
+    @GetMapping("/parametros/{id}/{otroid}")
+    public String dameParams(
+            @PathVariable("id") String id,
+            @PathVariable("otroid") String otroid,
+            Model model){
+        model.addAttribute("id",id);
+        model.addAttribute("otroid",otroid);
+        return "parametros";
     }
 
     @GetMapping("/playagame")
