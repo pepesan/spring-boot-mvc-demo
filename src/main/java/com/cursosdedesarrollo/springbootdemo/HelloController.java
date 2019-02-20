@@ -21,8 +21,7 @@ public class HelloController {
     public ModelAndView sayHello(Model model){
         model.addAttribute("variable","valor");
         model.addAttribute("variable2","valor2");
-        return
-                new ModelAndView(
+        return new ModelAndView(
                         "modelandview",
                         "model",
                         model);

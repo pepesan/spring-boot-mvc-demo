@@ -16,6 +16,7 @@ public class DatosController {
     public String welcome() {//Welcome page, non-rest
         return "Welcome to RestTemplate Example.";
     }
+
     @RequestMapping(value = "/dato/",method =
             RequestMethod.GET)
     public List<Dato> showDato(HttpServletRequest request,
